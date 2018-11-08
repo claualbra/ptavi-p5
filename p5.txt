@@ -200,24 +200,40 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   Audio(G.711) max jitter: 119.635, mean jitter:42.5
   Video(H.261) max jitter: 183.096, mean jitter:153.240
   El jitter es la variación de la latencia
-  
+
 13. Elige un paquete RTP de audio. Analiza el flujo de audio en Telephony
 -> RTP -> Stream Analysis.
 * ¿Cuánto valen el delta y el jitter para el primer paquete que
 ha llegado?
+ valen 0ms
+
 * ¿Podemos saber si éste es el primer paquete que nos han enviado?
+  si comprobando que su numero de secuencia que es el mas pequeño de todos
+
 * Los valores de jitter son menores de 10ms hasta un paquete
 dado. ¿Cuál?
+  Hasta el paquete 247
+
 * ¿A qué se debe el cambio tan brusco del jitter?
+  Debido a que el delta del paquete siguiente aumenta considerablemente provocando
+  que la latencia varie bastante
+
 * ¿Es comparable el cambio en el valor de jitter con el del delta?
 ¿Cual es más grande?
+    El jitter depende de la delta por lo tanto es comparable que los dos aumenten
+    Es mas grande el cambio del delta
 
 14. En Telephony selecciona el menú VoIP calls. Verás que se lista la
 llamada de voz IP capturada en una ventana emergente. Selecciona
 esa llamada y pulsa el botón Graph.
 * ¿Cuánto dura la conversación?
-* ¿Cuáles son sus SSRC? ¿Por qué hay varios SSRCs? ¿Hay CSRCs?
+  Dura 24.803 segundos
 
+* ¿Cuáles son sus SSRC? ¿Por qué hay varios SSRCs? ¿Hay CSRCs?
+  Video: 0x43306582
+  Audio: 0xBF4AFD37
+  Porque se utilizan para los dos flujos, no hay CSRCs ya que no estan mezclados los flujos
+  
 15. Identifica la trama donde se finaliza la conversación.
 * ¿Qué método SIP se utiliza?
 * ¿En qué trama(s)?
