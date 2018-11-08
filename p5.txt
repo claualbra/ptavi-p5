@@ -74,7 +74,7 @@ que ha lanzado Ekiga?
   La dirreción IP es 80.58.61.250
 
 * ¿Qué dirección IP (de ekiga.net) devuelve el servicio de nombres?
-  Devuelve la dirección 86.64.86
+  Devuelve la dirección 86.64.162.35
 
 6. A continuación, hay más de una docena de tramas TCP/HTTP.
 * ¿Podrı́as decir la URL que se está pidiendo?
@@ -95,7 +95,12 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 7. Hasta la trama 45 se puede observar una secuencia de tramas del
 protocolo STUN.
 * ¿Por qué se hace uso de este protocolo?
+  Debido a que el servidor STUN permite a los clientes encontrar sus direcciones públicas,
+  el tipo de NAT del cual ellos están atrás y el puerto Internet asociado por el NAT con el puerto local específico.
+  Esta información es usada para configurar comunicación UDP entre el cliente y el proveedor VOIP para así establecer una llamada.
+
 * ¿Podrı́as decir si estamos tras un NAT o no?
+  Sí porque estamos utilizando STUN
 
 8. La trama 46 es la primera trama SIP. En un entorno como el de Internet, lo habitual es desconocer la dirección IP de la otra parte al
 realizar una llamada. Por eso, todo usuario registra su localización en
@@ -103,10 +108,18 @@ un servidor Registrar. El Registrar guarda información sobre los
 usuarios en un servidor de localización que puede ser utilizado para
 localizar usuarios.
 * ¿Qué dirección IP tiene el servidor Registrar?
+  Tiene la IP 86.64.162.35
+
 * ¿A qué puerto (del servidor Registrar) se envı́an los paquetes
 SIP?
+  Se envian al puerto 5060 el puerto por defecto de SIP
+
 * ¿Qué método SIP utiliza el UA para registrarse?
+  Utiliza Method: REGISTER
+
 * Además de REGISTER, ¿podrı́as decir qué instrucciones SIP entiende el UA?
+  Allow: INVITE,ACK,OPTIONS,BYE,CANCEL,NOTIFY,REFER,MESSAGE
+  
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 9. Fijémonos en las tramas siguientes a la número 46:
