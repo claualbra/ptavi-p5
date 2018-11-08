@@ -233,16 +233,27 @@ esa llamada y pulsa el botón Graph.
   Video: 0x43306582
   Audio: 0xBF4AFD37
   Porque se utilizan para los dos flujos, no hay CSRCs ya que no estan mezclados los flujos
-  
+
 15. Identifica la trama donde se finaliza la conversación.
 * ¿Qué método SIP se utiliza?
+  Method: BYE
+
 * ¿En qué trama(s)?
+  En las tramas 924, 925, 927 y 933
+
 * ¿Por qué crees que se envı́a varias veces?
+  Porque al utilizar UDP no sabemos si se pierde algun paquete asi que enviando varios nos aseguramos.
 
 16. Finalmente, se cierra la aplicación de VozIP.
 * ¿Por qué aparece una instrucción SIP del tipo REGISTER?
+  Porque quire eliminar su cuenta del registrar y para eso pone el expires a 0
+
 * ¿En qué trama sucede esto?
+  Sucede en el trama 950
+
 * ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
+  Como he dicho en el apartado anterior cambia el valor de expires a 0
+  
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 Captura de una sesión SIP
