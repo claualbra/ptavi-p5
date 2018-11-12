@@ -174,7 +174,7 @@ captura es en destino)?
 
 * ¿Cuántos bits/segundo se envı́an?
   El codificador G.711 proporciona un flujo de datos de 64 Kbit/s.
-  
+
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 12. Vamos a ver más a fondo el intercambio RTP. En Telephony hay una
@@ -268,16 +268,20 @@ Ekiga para ver todo el proceso3 .
 19. Observa las diferencias en el inicio de la conversación entre el entorno
 del laboratorio y el del ejercicio anterior4 :
 * ¿Se utilizan DNS y STUN? ¿Por qué?
-  Sólo se utiliza DNS pero no interviene en nuestra llamada, no se utiliza el
-  STUN debido a que ya nos encontramos en una ip pública
+  Sólo se utiliza DNS para saber el nombre de la máquina, no se utiliza el
+  STUN debido a que ya nos encontramos en una ip pública.
 
 * ¿Son diferentes el registro y la descripción de la sesión?
+  No son diferentes, cambia el nombre sip unicamente.
 
 20. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
 * ¿Cuántos flujos tenemos?
+
 * ¿Cuál es su periodicidad?
+
 * ¿Cuánto es el valor máximo del delta y los valores medios y
 máximo del jitter?
+
 * ¿Podrı́as reproducir la conversación desde Wireshark? ¿Cómo?
 Comprueba que poniendo un valor demasiado pequeño para el
 buffer de jitter, la conversación puede no tener la calidad necesaria.
