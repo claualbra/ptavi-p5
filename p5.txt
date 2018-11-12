@@ -36,8 +36,7 @@ cuestiones:
 
 * ¿Qué IP tiene la máquina donde se ha efectuado la captura? ¿Se
 trata de una IP pública o de una IP privada? ¿Por qué lo sabes?
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-  La captura se ha realizado a través de la maquina con IP 192.168.1.34
+  La captura se ha realizado a través de la maquina con IP 192.168.1.34, lo sé gracias al descarte y es la ip que siempre se repite.
   La IP corresponde a una IP privada debido a que corresponde a las ips privadas de la versión 4 192.168.0.0 – 192.168.255.255
 
 3. Antes de analizar las tramas, mira las estadı́sticas generales que aparecen en el menú de Statistics. En el apartado de jerarquı́a de protocolos (Protocol Hierarchy) se puede ver el porcentaje del tráfico
@@ -56,10 +55,8 @@ Graphs. La captura que estamos viendo incluye desde la inicialización
 (registro) de la aplicación hasta su finalización, con una llamada entremedias.
 * Filtra por sip para conocer cuándo se envı́an paquetes SIP. ¿En
 qué segundos tienen lugar esos envı́os?
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   tienen lugar en el intervalo 7s-8s se han enviado 6 paquetes, en el 14s-15s otros 3 paquetes, en el 16s-17s 4 paquetes, 38s-39s segundo 4 paquetes, en el segundo 39s-40s otros 4 paquetes y en el 55s-56s 4 paquetes
 * Y los paquetes con RTP, ¿cuándo se envı́an?
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$(h.261)
   39 paquetes en el intervalo 17s-18s, 51 paquetes en 18s-19s, 46 paquetes 19s-20s,  20 paquetes 20s-21s, 30 paquetes 21s-22s,60 paquetes 23s-24s,70 paquetes 24s-25s, 90 paquetes 25s-26s, 49 paquetes 27s-28s,
   40 paquetes 28s-29s, 67 paquetes 29s-30s, 20 paquetes 30s-31s, 10 paquetes 31s-32s, 30 paquetes en 33s-34s, 20 paquetes en 34s-35s, 30 paquetes en 34s-36s, 10 paquetes 37s-38s y 5 paquetes en 38s-39s.
 
@@ -89,8 +86,7 @@ que ha lanzado Ekiga?
 * Si lanzamos el navegador web, por ejemplo, Mozilla Firefox, y
 vamos a la misma URL, ¿qué recibimos? ¿Qué es, entonces, lo
 que está respondiendo el servidor?
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-  Recibimos 212.128.254.158 que es la IP del ordenador donde estoy trabajando
+  Recibimos 212.128.254.158 que es la IP del ordenador donde estoy trabajando, para comprobar si estoy ante mi ip privada o pública.
 
 7. Hasta la trama 45 se puede observar una secuencia de tramas del
 protocolo STUN.
@@ -112,7 +108,7 @@ localizar usuarios.
 
 * ¿A qué puerto (del servidor Registrar) se envı́an los paquetes
 SIP?
-  Se envian al puerto 5060 el puerto por defecto de SIP
+  Se envían al puerto 5060 el puerto por defecto de SIP
 
 * ¿Qué método SIP utiliza el UA para registrarse?
   Utiliza Method: REGISTER
@@ -127,7 +123,7 @@ SIP?
   No se registra con exito ya que no esta autorizado.
 
 * ¿Cómo sabemos si el registro se ha realizado correctamente o no?
-Lo sabemos cuando el registrar manda un 200 Ok de confirmaión
+  Lo sabemos cuando el registrar manda un 200 Ok de confirmaión
 
 * ¿Podrı́as identificar las diferencias entre el primer intento y el
 segundo de registro? (fı́jate en el tamaño de los paquetes y mira
@@ -147,7 +143,7 @@ dirección SIP?
   Sí, From: "Gregorio Robles" <sip:grex@ekiga.net>
 
 * ¿Qué es lo que contiene el cuerpo de la trama? ¿En qué formato/protocolo está?
-  Contiene la descripcion de la sesión, esta con el formato SDP
+  Contiene la descripción de la sesión, esta con el formato SDP
 
 * ¿Tiene éxito el primer intento? ¿Cómo lo sabes?
   No debido a que el registrar le manda: Status-Line: SIP/2.0 407 Proxy Authentication Required
@@ -158,7 +154,6 @@ dirección SIP?
 
 11. Una vez conectado, estudia el intercambio de tramas.
 * ¿Qué protocolo(s) se utiliza(n)? ¿Para qué sirven estos protocolos?
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   H.261, que es un estándar de compresión de vídeo, RTP,que nos permite la
  transmisión de información en tiempo real y RTCP para el envío de datos de control
   y datos de mediciones realizadas durante la transmisión
@@ -189,14 +184,12 @@ opción RTP. Empecemos mirando los flujos RTP.
 
 * ¿Cuál es el valor máximo del delta? ¿Y qué es lo que significa el
 valor de delta?
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
    Para el audio 1290.444ms y para el video 1290.479ms
    Es la latencia el tiempo que tarda en enviarse un paquete
 
 * ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué
 quiere decir eso? ¿Crees que estamos ante una conversación de
 calidad?
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   Audio(G.711) max jitter: 119.635, mean jitter:42.5
   Video(H.261) max jitter: 183.096, mean jitter:153.240
   El jitter es la variación de la latencia
@@ -216,7 +209,7 @@ dado. ¿Cuál?
 
 * ¿A qué se debe el cambio tan brusco del jitter?
   Debido a que el delta del paquete siguiente aumenta considerablemente provocando
-  que la latencia varie bastante
+  que la latencia varíe bastante
 
 * ¿Es comparable el cambio en el valor de jitter con el del delta?
 ¿Cual es más grande?
@@ -242,18 +235,18 @@ esa llamada y pulsa el botón Graph.
   En las tramas 924, 925, 927 y 933
 
 * ¿Por qué crees que se envı́a varias veces?
-  Porque al utilizar UDP no sabemos si se pierde algun paquete asi que enviando varios nos aseguramos.
+  Porque al utilizar UDP no sabemos si se pierde algún paquete así que enviando varios nos aseguramos.
 
 16. Finalmente, se cierra la aplicación de VozIP.
 * ¿Por qué aparece una instrucción SIP del tipo REGISTER?
-  Porque quire eliminar su cuenta del registrar y para eso pone el expires a 0
+  Porque quiere eliminar su cuenta del registrar y para eso pone el expires a 0
 
 * ¿En qué trama sucede esto?
   Sucede en el trama 950
 
 * ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
   Como he dicho en el apartado anterior cambia el valor de expires a 0
-  
+
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 Captura de una sesión SIP
