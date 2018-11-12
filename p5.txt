@@ -276,16 +276,24 @@ del laboratorio y el del ejercicio anterior4 :
 
 20. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
 * ¿Cuántos flujos tenemos?
+  Tenemos dos flujos de audio(speex)
 
 * ¿Cuál es su periodicidad?
+  Observando la I/O Graph vemos que de los flujos se estan enviando 50 paquetes por segundo por lo tanto cada paquete se enviara cada 20ms
 
 * ¿Cuánto es el valor máximo del delta y los valores medios y
 máximo del jitter?
+  Flujo enviado por 212.79.111.155 Max Delta: 28.049ms, Max Jitter: 1.825ms y Mean Jitter: 0.855ms
+  Flujo enviado por 212.128.255.18 Max Delta: 41.993ms, Max Jitter: 13.065ms y Mean Jitter: 12.413ms
 
 * ¿Podrı́as reproducir la conversación desde Wireshark? ¿Cómo?
 Comprueba que poniendo un valor demasiado pequeño para el
 buffer de jitter, la conversación puede no tener la calidad necesaria.
+  Si se podría reproducir en Telephony, luego en VoIP calls y pulsando la conversación que queremos y en Play Streams.
+
 * ¿Sabrı́as decir qué tipo de servicio ofrece sip:500@ekiga.net?
+  Prueba de eco, admite video (H261, H263-1998, H264 solamente, en este orden), así como audio (solo PCMA) - el sonido y el video son de baja calidad
+
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 
